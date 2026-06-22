@@ -1,0 +1,6 @@
+- [Secret-backed proxy hardening](secret-backed-proxy-hardening.md) — server-side keys aren't enough; same-origin guard + rate-limit any proxy route fronting a paid/metered API.
+- [Server fetching own static assets](server-fetches-own-static-assets.md) — backend fetch of a bundled asset silently gets index.html (200, text/html) if the base path is wrong; verify content-type/size, not just status.
+- [Peak-driven spawn safety net](peak-driven-spawn-safety-net.md) — audio-peak-gated spawns (cracks, room build) need a wall-clock time-safety net or the last item lands at track end.
+- [Effect timer context churn](effect-timer-context-churn.md) — a useEffect setTimeout that depends on a callback tied to throttled context state (currentTime) gets reset every tick and never fires until playback stops.
+- [Deforming-surface cursor sampling](deforming-surface-cursor-sampling.md) — sample pointer cursors on a reactive surface's flat REST plane, not the deformed e.point, or flush actors become unhittable when it ripples hard.
+- [Demo sample track licensing](demo-sample-track-licensing.md) — the bundled default sample-track.mp3 plays in the demo video; keep it royalty-free and its title NOT in Musixmatch (so MOCK_RICHSYNC drives the scripted clue).

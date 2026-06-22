@@ -1,0 +1,55 @@
+uploads = []
+
+[[generated]]
+id = "hecYaZneWVtjZUnGdNFfD"
+uri = "file://artifacts/audio-architect/public/textures/wall-hiphop.png"
+type = "image"
+title = "graffiti neon wall"
+
+[[generated]]
+id = "_TD0_liMPQyDx5liNm-ip"
+uri = "file://artifacts/audio-architect/public/textures/wall-classical.png"
+type = "image"
+title = "marble palace wall"
+
+[[generated]]
+id = "_bOeepTUK72T6WHaoM0AJ"
+uri = "file://attached_assets/cover/audioarchitect_cover.png"
+type = "image"
+title = "AudioArchitect game cover"
+
+[[outputs]]
+id = "YqOR_Vp9Wmyt-u8sg9ak3"
+uri = "file://artifacts/audio-architect/public/audio/sample-track.mp3"
+type = "audio"
+title = "audioarchitect cyberpunk theme"
+
+[[outputs]]
+id = "VU-eXbl398s3ReRd5LMAT"
+uri = "file://attached_assets/cover/audioarchitect_cover.png"
+type = "image"
+title = "AudioArchitect Cover (16:9) — with title"
+
+[[outputs]]
+id = "_37JHK43WbMwuBvoAkcMq"
+uri = "file://attached_assets/cover/audioarchitect_cover.jpg"
+type = "image"
+title = "AudioArchitect Cover (16:9 JPG — upload this)"
+
+[[outputs]]
+id = "OXfnEz1MsQHV0ciqhl2rc"
+uri = "file://attached_assets/cover/audioarchitect_cover_1280.jpg"
+type = "image"
+title = "AudioArchitect Cover (1280x720 — most compatible)"
+
+[[outputs]]
+id = "TxysK16iUCiChVtUIJ06y"
+uri = "file://attached_assets/cover/cover_small.jpg"
+type = "image"
+title = "Cover — small JPG (1200x675, 112KB)"
+
+[[outputs]]
+id = "i2FJpxcMTxosr9a8TKQJf"
+uri = "file://attached_assets/cover/cover_fallback.png"
+type = "image"
+title = "Cover — PNG fallback (1280x720)"

@@ -1,0 +1,95 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: game
+    description: Game lifecycle operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /game-over:
+    post:
+      operationId: gameOver
+      tags: [game]
+      summary: Submit game-over stats
+      description: >
+        Receives the player's end-of-game stats and forwards them to the
+        configured n8n webhook. When no webhook is configured (mock mode),
+        the stats are accepted and echoed back without forwarding.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GameOverInput"
+      responses:
+        "200":
+          description: Stats accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GameOverResult"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    GameOverInput:
+      type: object
+      required:
+        - clearTimeSeconds
+        - song
+        - status
+      properties:
+        clearTimeSeconds:
+          type: number
+          description: Total time in seconds the player took
+        song:
+          type: string
+          description: The track the player was playing
+        status:
+          type: string
+          enum: [escaped, failed, abandoned]
+          description: How the game ended
+        genre:
+          type: string
+          description: The active Cyanite genre/mood at game end
+    GameOverResult:
+      type: object
+      required:
+        - received
+        - forwarded
+      properties:
+        received:
+          type: boolean
+          description: Whether the server accepted the stats
+        forwarded:
+          type: boolean
+          description: Whether the stats were forwarded to the n8n webhook
+        message:
+          type: string
+          description: Human-readable status detail
+
